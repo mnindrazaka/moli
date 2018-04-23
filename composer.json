@@ -1,0 +1,27 @@
+{
+  "name": "ivan/codeigniter-extended",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "M Nindra Zaka",
+      "email": "mnindrazaka@gmail.com"
+    },
+    {
+      "name": "Ivan Fadila Putra",
+      "email": "i.fadilaputra@gmail.com"
+    }
+  ],
+  "require": {
+    "nesbot/carbon": "^1.23",
+    "philo/laravel-blade": "3.*",
+    "illuminate/database": "5.*",
+    "illuminate/validation": "^5.6",
+    "illuminate/translation": "^5.6",
+    "illuminate/filesystem": "^5.6"
+  },
+  "autoload": {
+    "classmap": [
+      "application/models"
+    ]
+  }
+}
