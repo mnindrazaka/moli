@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/plugins/slick-1.8.0/slick.css">
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/responsive.css">
-
+    @yield('header')
 </head>
 
 <body>
@@ -54,7 +54,7 @@
                     </div>
 
                     <!--  -->
-                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left text-right">
+                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left tfrext-right">
                         <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
                             <div class="wishlist d-flex flex-row align-items-center justify-content-end">
                                 <div class="wishlist_icon">
@@ -84,7 +84,55 @@
             </div>
         </div>
 
+        <!-- Main Navigation -->
+
+        <nav class="main_nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                        <div class="main_nav_content d-flex flex-row">
+
+                            <!-- Title -->
+
+                            <div class="cat_menu_container">
+                                <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
+                                    <div class="fa fa-tag text-light"></div>
+                                    <div class="cat_menu_text">@yield('title')</div>
+                                </div>
+                            </div>
+
+                            <!-- Main Nav Menu -->
+
+                            <div class="main_nav_menu ml-auto">
+                                <ul class="standard_dropdown main_nav_dropdown">
+                                    <li><a href="{{ base_url() }}">Beranda<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="{{ base_url('kategori') }}">Kategori<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="{{ base_url('produk') }}">Produk<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="{{ base_url('tentang') }}">Tentang<i class="fas fa-chevron-down"></i></a></li>
+
+                                </ul>
+                            </div>
+
+                            <!-- Menu Trigger -->
+
+                            <div class="menu_trigger_container ml-auto">
+                                <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
+                                    <div class="menu_burger">
+                                        <div class="menu_trigger_text">menu</div>
+                                        <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
     </header>
+
 
     <!-- Content -->
     @yield('content')
@@ -116,44 +164,12 @@
 
                 <div class="col-lg-2 offset-lg-2">
                     <div class="footer_column">
-                        <div class="footer_title">Find it Fast</div>
+                        <div class="footer_title">Main Menu</div>
                         <ul class="footer_list">
-                            <li><a href="#">Computers & Laptops</a></li>
-                            <li><a href="#">Cameras & Photos</a></li>
-                            <li><a href="#">Hardware</a></li>
-                            <li><a href="#">Smartphones & Tablets</a></li>
-                            <li><a href="#">TV & Audio</a></li>
-                        </ul>
-                        <div class="footer_subtitle">Gadgets</div>
-                        <ul class="footer_list">
-                            <li><a href="#">Car Electronics</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="footer_column">
-                        <ul class="footer_list footer_list_2">
-                            <li><a href="#">Video Games & Consoles</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Cameras & Photos</a></li>
-                            <li><a href="#">Hardware</a></li>
-                            <li><a href="#">Computers & Laptops</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-lg-2">
-                    <div class="footer_column">
-                        <div class="footer_title">Customer Care</div>
-                        <ul class="footer_list">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">Order Tracking</a></li>
-                            <li><a href="#">Wish List</a></li>
-                            <li><a href="#">Customer Services</a></li>
-                            <li><a href="#">Returns / Exchange</a></li>
-                            <li><a href="#">FAQs</a></li>
-                            <li><a href="#">Product Support</a></li>
+                            <li><a href="{{ base_url() }}">Beranda</a></li>
+                            <li><a href="{{ base_url('kategori') }}">Kategori</a></li>
+                            <li><a href="{{ base_url('produk') }}">Produk</a></li>
+                            <li><a href="{{ base_url('tentang') }}">Tentang</a></li>
                         </ul>
                     </div>
                 </div>
@@ -171,14 +187,6 @@
                     <div class="copyright_container d-flex flex-sm-row flex-column align-items-center justify-content-start">
                         <div class="copyright_content">
                             Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-                        </div>
-                        <div class="logos ml-sm-auto">
-                            <ul class="logos_list">
-                                <li><a href="#"><img src="{{ base_url() }}assets/vendors/onetech/images/logos_1.png" alt=""></a></li>
-                                <li><a href="#"><img src="{{ base_url() }}assets/vendors/onetech/images/logos_2.png" alt=""></a></li>
-                                <li><a href="#"><img src="{{ base_url() }}assets/vendors/onetech/images/logos_3.png" alt=""></a></li>
-                                <li><a href="#"><img src="{{ base_url() }}assets/vendors/onetech/images/logos_4.png" alt=""></a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>

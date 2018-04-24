@@ -839,7 +839,7 @@ $(document).ready(function()
 			reviewsSlider.owlCarousel(
 			{
 				items:3,
-				loop:true,
+				loop:false,
 				margin:30,
 				autoplay:false,
 				nav:false,
