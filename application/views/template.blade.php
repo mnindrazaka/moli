@@ -199,6 +199,7 @@
 <script src="{{ base_url() }}assets/vendors/onetech/plugins/slick-1.8.0/slick.js"></script>
 <script src="{{ base_url() }}assets/vendors/onetech/plugins/easing/easing.js"></script>
 <script src="{{ base_url() }}assets/vendors/onetech/js/custom.js"></script>
+@yield('script')
 </body>
 
 </html>
