@@ -10,22 +10,18 @@
                   <div class="card-body">
                     <h4 class="card-title">Pilih Kategori</h4>
                       <div class="list-group">
+                          <a href="{{ base_url('produk') }}"
+                             class="list-group-item list-group-item-action {{ isset($id_kategori) ? '':'active' }}">
+                              Semua Kategori
+                          </a>
                           @foreach($kategori as $row)
-                          <a href="#" class="list-group-item list-group-item-action">{{ $row->nama }}</a>
+                          <a href="{{ base_url('produk/index/' . $row->id_kategori) }}"
+                             class="list-group-item list-group-item-action {{ @$id_kategori == $row->id_kategori ? 'active': '' }}">
+                              {{ $row->nama }}
+                          </a>
                           @endforeach
                       </div>
                   </div>
-                </div>
-
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h4 class="card-title">Pilih Kota</h4>
-                        <div class="list-group">
-                            <a href="#" class="list-group-item list-group-item-action active">Active item</a>
-                            <a href="#" class="list-group-item list-group-item-action">Item</a>
-                            <a href="#" class="list-group-item list-group-item-action disabled">Disabled item</a>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="col-md-9">

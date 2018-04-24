@@ -3,9 +3,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Produk extends MY_Controller {
 
-    public function index() {
+    public function index($id_kategori = null) {
         $data['kategori'] = KategoriModel::all();
         $data['produk'] = ProdukModel::all();
+
+        if($id_kategori) {
+            $data['produk'] = ProdukModel::where('id_kategori', $id_kategori)->get();
+            $data['id_kategori'] = $id_kategori;
+        }
+
         $this->view('produk.index', $data);
     }
 

@@ -68,6 +68,18 @@
                     <div class="card">
                         <img class="card-img-top" src="{{ base_url('assets/uploads/toko/' . $produk->toko->logo) }}" alt="Card image cap">
                         <div class="card-body">
+                            @php
+                                $rating = 0;
+                                foreach($produk->toko->rating as $row) {
+                                    $rating += $row->rating;
+                                }
+                            @endphp
+
+                            <div class="rating_r rating_r_4 product_rating">
+                                @for($i = 1; $i <= $rating / count($produk->toko->rating); $i++)
+                                    <span class="fa fa-star text-primary"></span>
+                                @endfor
+                            </div>
                             <h4 class="card-title" align="center">{{ $produk->toko->nama }}</h4>
                             <p class="card-text" align="center">{{ $produk->toko->slogan }}</p>
                             <p align="center">
