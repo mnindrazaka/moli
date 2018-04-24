@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Mall Ikan</title>
+    <title>MOLI</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -33,7 +33,8 @@
                     <div class="col-lg-2 col-sm-3 col-3 order-1">
                         <div class="logo_container">
                             <div class="logo">
-                                <a href="#">Mall Ikan</a>
+                                <a href="{{base_url()}}">MOLI</a>
+                                <br>
                                 <span class="text-muted">Cara mudah cari ikan</span>
                             </div>
                         </div>
@@ -41,16 +42,7 @@
 
                     <!-- Search -->
                     <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-                        <div class="header_search">
-                            <div class="header_search_content">
-                                <div class="header_search_form_container">
-                                    <form action="#" class="header_search_form clearfix">
-                                        <input type="search" required="required" class="header_search_input" placeholder="Cari ikan..." style="width: 100%">
-                                        <button type="submit" class="header_search_button trans_300" value="Submit"><img src="{{ base_url() }}assets/vendors/onetech/images/search.png" alt=""></button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                     <!--  -->

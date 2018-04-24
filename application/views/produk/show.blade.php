@@ -30,7 +30,7 @@
                             }
                         @endphp
 
-                        <div class="rating_r rating_r_4 product_rating">
+                        <div class="rating_r rating_r_4 product_rating" style="text-align =">
                             @for($i = 1; $i <= $rating / count($ulasan); $i++)
                                 <span class="fa fa-star text-primary"></span>
                             @endfor
@@ -64,8 +64,8 @@
                 </div>
 
                 {{-- Toko --}}
-                <div class="col-lg-3">
-                    <div class="card">
+                <div class="col-lg-3" style="border-left: 1px solid #ccc">
+                    <div>
                         <img class="card-img-top" src="{{ base_url('assets/uploads/toko/' . $produk->toko->logo) }}" alt="Card image cap">
                         <div class="card-body">
                             @php
@@ -75,7 +75,7 @@
                                 }
                             @endphp
 
-                            <div class="rating_r rating_r_4 product_rating">
+                            <div class="rating_r rating_r_4 product_rating" style="text-align: center;">
                                 @for($i = 1; $i <= $rating / count($produk->toko->rating); $i++)
                                     <span class="fa fa-star text-primary"></span>
                                 @endfor

@@ -4,16 +4,22 @@
 
 @section('content')
     <!-- Banner -->
-    <div class="banner">
-        <div class="banner_background" style="background-image:url(assets/vendors/onetech/images/banner_background.jpg)"></div>
+    <div class="banner" style="height: 410px;">
+        <div class="banner_background" style="background-image:url(assets/vendors/onetech/images/banner_background.jpg);">
+          <div style="background-color: rgba(0,0,0, 0.5); height: 100%"></div>
+        </div>
         <div class="container fill_height">
             <div class="row fill_height">
-                <div class="banner_product_image"><img src="{{ base_url() }}assets/vendors/onetech/images/banner_product.png" alt="" class="img-fluid"></div>
                 <div class="col-lg-5 offset-lg-4 fill_height">
-                    <div class="banner_content">
-                        <h1 class="banner_text">Cara Baru</h1>
-                        <h1 class="banner_text">Belanja Ikan</h1>
-                        <div class="button banner_button"><a href="{{ base_url('produk') }}">Belanja Sekarang</a></div>
+                  <h1 class="banner_text">Moli</h1>
+                  <p class="text-banner">PENYEDIA BERBAGAI JENIS IKAN BERKUALITAS</p>
+                    <div class="header_search_content">
+                        <div class="header_search_form_container">
+                            <form action="#" class="header_search_form clearfix">
+                                <input type="search" required="required" class="header_search_input" placeholder="Cari ikan..." style="width: 100%">
+                                <button type="submit" class="header_search_button trans_300" value="Submit"><img src="{{ base_url() }}assets/vendors/onetech/images/search.png" alt=""></button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
