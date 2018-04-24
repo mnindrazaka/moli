@@ -64,7 +64,7 @@
                 </div>
 
                 {{-- Toko --}}
-                <div class="col-lg-3" style="border-left: 1px solid #ccc">
+                <div class="col-lg-3" style="border-left: 1px solid #eee">
                     <div>
                         <img class="card-img-top" src="{{ base_url('assets/uploads/toko/' . $produk->toko->logo) }}" alt="Card image cap">
                         <div class="card-body">
@@ -86,7 +86,7 @@
                                 <span class="fa fa-map-marker"></span>
                                 <span>{{ $produk->toko->kota }}</span>
                             </p>
-                            <a href="#" class="btn btn-primary btn-block">Detail</a>
+                            <a href="{{ base_url('toko/show/' . $produk->toko->id_toko) }}" class="btn btn-primary btn-block">Detail</a>
                         </div>
                     </div>
                 </div>

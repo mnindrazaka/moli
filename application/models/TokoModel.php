@@ -10,4 +10,8 @@ class TokoModel extends Eloquent {
     public function rating() {
         return $this->hasMany('RatingModel', 'id_toko', 'id_toko');
     }
+
+    public function rekening() {
+        return $this->hasMany('RekeningModel', 'id_toko', 'id_toko');
+    }
 }
