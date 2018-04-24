@@ -146,17 +146,19 @@
                                                         <img src="{{ base_url('assets/uploads/produk/' . $row->foto) }}" alt="">
                                                     </div>
                                                     <div class="product_content">
-                                                        <div class="product_price">Rp. {{ $row->harga }}</div>
+                                                        <div class="product_price">
+                                                            Rp. {{ $row->harga }}
+                                                            <span class="text-muted ml-0"> / {{ $row->satuan }}</span>
+                                                        </div>
                                                         <div class="product_name"><div class="text-dark">{{ $row->nama }}</div></div>
                                                         <div class="product_extras">
+                                                            <div class="p-1">
+                                                                <i class="fa fa-map-marker"></i>
+                                                                <span>{{ $row->toko->kota }}</span>
+                                                            </div>
                                                             <button class="product_cart_button">Beli</button>
                                                         </div>
                                                     </div>
-                                                    <div class="product_fav"><i class="fas fa-heart"></i></div>
-                                                    {{--<ul class="product_marks">--}}
-                                                    {{--<li class="product_mark product_discount">-25%</li>--}}
-                                                    {{--<li class="product_mark product_new">new</li>--}}
-                                                    {{--</ul>--}}
                                                 </div>
                                             </a>
                                         </div>
