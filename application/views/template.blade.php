@@ -87,7 +87,7 @@
                                                 <a class="dropdown-toggle" id="user_menu" data-toggle="dropdown">{{ $_SESSION['user']->nama }}</a>
                                                 <div class="dropdown-menu" aria-labelledby="user_menu">
                                                     <a class="dropdown-item" href="#">Pembelian</a>
-                                                    <a class="dropdown-item" href="#">Profil</a>
+                                                    <a class="dropdown-item" href="{{ base_url('profil') }}">Profil</a>
                                                     <a class="dropdown-item" href="{{ base_url('autentikasi/dologout') }}">Keluar</a>
                                                 </div>
                                             </div>
