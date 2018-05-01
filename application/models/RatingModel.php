@@ -6,6 +6,7 @@ class RatingModel extends Eloquent {
     protected $table = 'rating';
     protected $primaryKey = 'id_rating';
     protected $fillable = ['rating', 'keterangan', 'id_toko', 'id_pengguna'];
+    public $timestamps = false;
 
     public function pengguna() {
         return $this->belongsTo('PenggunaModel', 'id_pengguna', 'id_pengguna');

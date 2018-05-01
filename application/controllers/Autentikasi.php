@@ -14,7 +14,7 @@ class Autentikasi extends MY_Controller {
     public function dologin() {
         $this->validate($this->input->post(), [
             'email' => 'required|email|exists:pengguna',
-            'password' => 'required|string'
+            'password' => 'required|string|min:6'
         ]);
 
         $user = PenggunaModel::where([
@@ -37,6 +37,19 @@ class Autentikasi extends MY_Controller {
 
     public function dologout() {
         $this->session->unset_userdata('user');
+        redirect(base_url());
+    }
+
+    public function doregister() {
+        $this->validate($this->input->post(), [
+            'nama' => 'required|string',
+            'email' => 'required|email|unique:pengguna',
+            'password' => 'required|string|min:6|confirmed'
+        ]);
+
+        $_POST['password'] = md5($_POST['password']);
+        $user = PenggunaModel::create($this->input->post());
+        $this->session->set_userdata('user', $user);
         redirect(base_url());
     }
 }

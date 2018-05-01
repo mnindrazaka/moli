@@ -6,6 +6,7 @@ class RekeningModel extends Eloquent {
     protected $table = 'rekening';
     protected $primaryKey = 'id_rekening';
     protected $fillable = ['nama', 'no', 'id_bank', 'id_toko'];
+    public $timestamps = false;
 
     public function bank() {
         return $this->belongsTo('BankModel', 'id_bank', 'id_bank');

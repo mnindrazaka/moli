@@ -6,4 +6,5 @@ class BankModel extends Eloquent {
     protected $table = 'bank';
     protected $primaryKey = 'id_bank';
     protected $fillable = ['nama'];
+    public $timestamps = false;
 }

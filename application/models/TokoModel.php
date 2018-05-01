@@ -6,6 +6,7 @@ class TokoModel extends Eloquent {
     protected $table = 'toko';
     protected $primaryKey = 'id_toko';
     protected $fillable = ['nama', 'slogan', 'deskripsi', 'logo', 'telp', 'latitude', 'longitude', 'kota'];
+    public $timestamps = false;
 
     public function rating() {
         return $this->hasMany('RatingModel', 'id_toko', 'id_toko');

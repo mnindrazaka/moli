@@ -6,4 +6,5 @@ class KategoriModel extends Eloquent {
     protected $table = 'kategori';
     protected $primaryKey = 'id_kategori';
     protected $fillable = ['nama'];
+    public $timestamps = false;
 }

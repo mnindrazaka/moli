@@ -10,6 +10,7 @@ class ProdukModel extends Eloquent {
         'id_kategori', 'foto', 'harga',
         'status', 'satuan'
     ];
+    public $timestamps = false;
 
     public function kategori() {
         return $this->belongsTo('KategoriModel', 'id_kategori', 'id_kategori');
