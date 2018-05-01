@@ -40,36 +40,60 @@
                         </div>
                     </div>
 
-                    <!-- Search -->
-                    <div class="col-lg-6 col-12 order-lg-2 order-3 text-lg-left text-right">
-
-                    </div>
-
                     <!--  -->
-                    <div class="col-lg-4 col-9 order-lg-3 order-2 text-lg-left tfrext-right">
+                    <div class="col-lg-10 col-9 order-lg-3 order-2 text-lg-left tfrext-right">
                         <div class="wishlist_cart d-flex flex-row align-items-center justify-content-end">
-                            <div class="wishlist d-flex flex-row align-items-center justify-content-end">
-                                <div class="wishlist_icon">
-                                    <h3 class="fa fa-building"></h3>
-                                </div>
-                                <div class="wishlist_content">
-                                    <div class="wishlist_text"><a href="#">Toko</a></div>
-                                </div>
-                            </div>
 
-                            <!-- Cart -->
-                            <div class="cart">
-                                <div class="cart_container d-flex flex-row align-items-center justify-content-end">
-                                    <div class="cart_icon">
-                                        <img src="{{ base_url() }}assets/vendors/onetech/images/cart.png" alt="">
-                                        <div class="cart_count"><span>10</span></div>
-                                    </div>
-                                    <div class="cart_content">
-                                        <div class="cart_text"><a href="#">Keranjang</a></div>
-                                        <div class="cart_price">Rp. 100.000</div>
+                            @if(!isset($_SESSION['user']))
+                                <div class="wishlist d-flex flex-row align-items-center justify-content-end">
+                                    <div class="wishlist_content">
+                                        <a class="btn btn-primary" href="{{ base_url('autentikasi/login') }}">Masuk</a>
                                     </div>
                                 </div>
-                            </div>
+                            @else
+                                {{-- Toko --}}
+                                <div class="wishlist d-flex flex-row align-items-center justify-content-end">
+                                    <div class="wishlist_icon">
+                                        <h3 class="fa fa-building"></h3>
+                                    </div>
+                                    <div class="wishlist_content">
+                                        <div class="wishlist_text"><a href="#">Toko</a></div>
+                                    </div>
+                                </div>
+
+                                <!-- Cart -->
+                                <div class="cart wishlist">
+                                    <div class="cart_container d-flex flex-row align-items-center justify-content-end">
+                                        <div class="cart_icon">
+                                            <img src="{{ base_url() }}assets/vendors/onetech/images/cart.png" alt="">
+                                            <div class="cart_count"><span>10</span></div>
+                                        </div>
+                                        <div class="cart_content">
+                                            <div class="cart_text"><a href="#">Keranjang</a></div>
+                                            <div class="cart_price">Rp. 100.000</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {{-- User menu --}}
+                                <div class="d-flex flex-row align-items-center justify-content-end">
+                                    <div class="wishlist_icon">
+                                        <h3 class="fa fa-user"></h3>
+                                    </div>
+                                    <div class="wishlist_content">
+                                        <div class="dropdown open">
+                                            <div class="wishlist_text">
+                                                <a class="dropdown-toggle" id="user_menu" data-toggle="dropdown">{{ $_SESSION['user']->nama }}</a>
+                                                <div class="dropdown-menu" aria-labelledby="user_menu">
+                                                    <a class="dropdown-item" href="#">Pembelian</a>
+                                                    <a class="dropdown-item" href="#">Profil</a>
+                                                    <a class="dropdown-item" href="{{ base_url('autentikasi/dologout') }}">Keluar</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -127,9 +151,9 @@
 
 
     <!-- Content -->
-    @yield('content')
+@yield('content')
 
-    <!-- Footer -->
+<!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
