@@ -126,4 +126,16 @@ class MY_Controller extends CI_Controller {
 
         return $uploaded_filename;
     }
+
+    protected function redirectIfAuthenticated() {
+        if($this->session->userdata('user')) {
+            redirect(base_url());
+        }
+    }
+
+    protected function auth() {
+        if(!$this->session->userdata('user')) {
+            redirect(base_url('autentikasi/login'));
+        }
+    }
 }

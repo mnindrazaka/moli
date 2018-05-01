@@ -4,14 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Autentikasi extends MY_Controller {
 
     public function login() {
+        $this->redirectIfAuthenticated();
         $this->view('autentikasi.login');
 	}
 
     public function register() {
+        $this->redirectIfAuthenticated();
         $this->view('autentikasi.register');
     }
 
     public function dologin() {
+        $this->redirectIfAuthenticated();
         $this->validate($this->input->post(), [
             'email' => 'required|email|exists:pengguna',
             'password' => 'required|string|min:6'
@@ -36,11 +39,13 @@ class Autentikasi extends MY_Controller {
     }
 
     public function dologout() {
+        $this->auth();
         $this->session->unset_userdata('user');
         redirect(base_url());
     }
 
     public function doregister() {
+        $this->redirectIfAuthenticated();
         $this->validate($this->input->post(), [
             'nama' => 'required|string',
             'email' => 'required|email|unique:pengguna',
