@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/plugins/slick-1.8.0/slick.css">
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/main_styles.css">
     <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/custom.css">
     @yield('header')
 </head>
 
