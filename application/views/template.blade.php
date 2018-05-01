@@ -87,7 +87,7 @@
                                                 <a class="dropdown-toggle" id="user_menu" data-toggle="dropdown">{{ $_SESSION['user']->nama }}</a>
                                                 <div class="dropdown-menu" aria-labelledby="user_menu">
                                                     <a class="dropdown-item" href="#">Pembelian</a>
-                                                    <a class="dropdown-item" href="{{ base_url('profil') }}">Profil</a>
+                                                    <a class="dropdown-item" href="#">Profil</a>
                                                     <a class="dropdown-item" href="{{ base_url('autentikasi/dologout') }}">Keluar</a>
                                                 </div>
                                             </div>
@@ -126,6 +126,7 @@
                                     <li><a href="{{ base_url() }}">Beranda<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="{{ base_url('kategori') }}">Kategori<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="{{ base_url('produk') }}">Produk<i class="fas fa-chevron-down"></i></a></li>
+                                    <li><a href="{{ base_url('toko') }}">Toko<i class="fas fa-chevron-down"></i></a></li>
                                     <li><a href="{{ base_url('tentang') }}">Tentang<i class="fas fa-chevron-down"></i></a></li>
 
                                 </ul>
@@ -186,6 +187,7 @@
                             <li><a href="{{ base_url() }}">Beranda</a></li>
                             <li><a href="{{ base_url('kategori') }}">Kategori</a></li>
                             <li><a href="{{ base_url('produk') }}">Produk</a></li>
+                            <li><a href="{{ base_url('toko') }}">Toko</a></li>
                             <li><a href="{{ base_url('tentang') }}">Tentang</a></li>
                         </ul>
                     </div>
