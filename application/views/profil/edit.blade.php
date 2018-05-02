@@ -44,6 +44,22 @@
                             <small class="text-danger">{{ $errors->first('foto') }}</small>
                         @endif
                     </div>
+
+                    <div class="form-group">
+                        <label for="latitude">Latitude</label>
+                        <input id="latitude" type="text" class="form-control" name="latitude" value="{{ old('latitude', $user->latitude) }}" placeholder="Masukkan Latitude">
+                        @if($errors->has('latitude'))
+                            <small class="text-danger">{{ $errors->first('latitude') }}</small>
+                        @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label for="longitude">Longitude</label>
+                        <input id="longitude" type="text" class="form-control" name="longitude" value="{{ old('longitude', $user->longitude) }}" placeholder="Masukkan Longitude">
+                        @if($errors->has('longitude'))
+                            <small class="text-danger">{{ $errors->first('longitude') }}</small>
+                        @endif
+                    </div>
                 </div>
             </div>
         </form>

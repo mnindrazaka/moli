@@ -23,7 +23,9 @@ class Profil extends MY_Controller {
 
         $this->validate($this->input->post(), [
             'nama' => 'required|string|min:6',
-            'telp' => 'required|string'
+            'telp' => 'required|string',
+            'latitude' => 'required|numeric',
+            'longitude' => 'required|numeric',
         ]);
 
         if($this->input->post('email') != '') {
