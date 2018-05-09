@@ -68,7 +68,7 @@
     <script>
         function myMap() {
             // Make Maps
-            var myCenter = new google.maps.LatLng({{ $user->latitude }}, {{ $user->longitude }});
+            var myCenter = new google.maps.LatLng({{ old('latitude', $user->latitude) }}, {{ old('longitude', $user->longitude) }});
             var mapProp = {
                 center: myCenter,
                 zoom: 15

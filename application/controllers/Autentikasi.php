@@ -53,6 +53,9 @@ class Autentikasi extends MY_Controller {
         ]);
 
         $_POST['password'] = md5($_POST['password']);
+        $_POST['latitude'] = -7.95873;
+        $_POST['longitude'] = 112.638;
+
         $user = PenggunaModel::create($this->input->post());
         $this->session->set_userdata('user', $user);
         redirect(base_url());
