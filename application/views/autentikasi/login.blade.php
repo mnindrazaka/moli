@@ -6,7 +6,7 @@
     <div class="card fat">
         <div class="card-body">
             <h4 class="card-title">Silahkan Login</h4>
-            <form method="POST" action="{{ base_url('autentikasi/dologin') }}">
+            <form method="POST" action="{{ base_url('Login/loginProcess') }}">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" autofocus>
@@ -29,7 +29,7 @@
                     </button>
                 </div>
                 <div class="margin-top20 text-center">
-                    Belum punya akun ? <a href="{{ base_url('autentikasi/register') }}">Daftar</a>
+                    Belum punya akun ? <a href="{{ base_url('Register') }}">Daftar</a>
                 </div>
             </form>
         </div>

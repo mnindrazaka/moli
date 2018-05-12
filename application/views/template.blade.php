@@ -48,7 +48,7 @@
                 @if(!isset($_SESSION['user']))
                   <div class="wishlist d-flex flex-row align-items-center justify-content-end">
                     <div class="wishlist_content">
-                      <a class="btn btn-primary" href="{{ base_url('autentikasi/login') }}">Masuk</a>
+                      <a class="btn btn-primary" href="{{ base_url('Login') }}">Masuk</a>
                     </div>
                   </div>
                 @else
@@ -88,7 +88,7 @@
                           <div class="dropdown-menu" aria-labelledby="user_menu">
                             <a class="dropdown-item" href="#">Pembelian</a>
                             <a class="dropdown-item" href="{{ base_url('profil') }}">Profil</a>
-                            <a class="dropdown-item" href="{{ base_url('autentikasi/dologout') }}">Keluar</a>
+                            <a class="dropdown-item" href="{{ base_url('login/logoutProcess') }}">Keluar</a>
                           </div>
                         </div>
                       </div>

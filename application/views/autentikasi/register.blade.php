@@ -6,7 +6,7 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Silahkan Daftar</h4>
-            <form method="POST" action="{{ base_url('autentikasi/doregister') }}">
+            <form method="POST" action="{{ base_url('Register/registerProcess') }}">
 
                 <div class="form-group">
                     <label for="nama">Nama</label>
@@ -43,7 +43,7 @@
                     </button>
                 </div>
                 <div class="margin-top20 text-center">
-                    Sudah punya akun ? <a href="{{ base_url('autentikasi/login') }}">Login</a>
+                    Sudah punya akun ? <a href="{{ base_url('Login') }}">Login</a>
                 </div>
             </form>
         </div>

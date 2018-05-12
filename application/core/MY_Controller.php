@@ -127,15 +127,15 @@ class MY_Controller extends CI_Controller {
         return $uploaded_filename;
     }
 
-    protected function redirectIfAuthenticated() {
-        if($this->session->userdata('user')) {
-            redirect(base_url());
+    protected function redirectIfAuthenticated($session_name, $redirect_path = "") {
+        if($this->session->userdata($session_name)) {
+            redirect(base_url($redirect_path));
         }
     }
 
-    protected function auth() {
-        if(!$this->session->userdata('user')) {
-            redirect(base_url('autentikasi/login'));
+    protected function auth($session_name, $redirect_path = "") {
+        if(!$this->session->userdata($session_name)) {
+            redirect(base_url($redirect_path));
         }
     }
 }
