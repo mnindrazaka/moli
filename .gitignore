@@ -20,3 +20,5 @@ application/logs/*
 .idea
 
 /vendor/
+
+/application/config/database.php

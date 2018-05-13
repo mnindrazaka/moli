@@ -5,6 +5,6 @@ class Beranda extends MY_Controller {
 
   public function index()
   {
-    $this->view('admin/template');
+    $this->view('admin/beranda/index');
   }
 }
