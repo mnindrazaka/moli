@@ -6,7 +6,7 @@ class Register extends MY_Controller {
     // Show register form
     public function index() {
         $this->redirectIfAuthenticated('user');
-        $this->view('autentikasi.register');
+        $this->view('register.index');
     }
 
     // Register process

@@ -6,7 +6,7 @@ class Login extends MY_Controller {
     // Show login form
     public function index() {
         $this->redirectIfAuthenticated('user');
-        $this->view('autentikasi.login');
+        $this->view('login.index');
     }
 
     // Login process

@@ -58,7 +58,7 @@
                       <h3 class="fa fa-building"></h3>
                     </div>
                     <div class="wishlist_content">
-                      <div class="wishlist_text"><a href="#">Toko</a></div>
+                      <div class="wishlist_text"><a href="{{ base_url('tokoSaya') }}">Toko</a></div>
                     </div>
                   </div>
 
