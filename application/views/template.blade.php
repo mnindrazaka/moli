@@ -14,6 +14,7 @@
   <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/main_styles.css">
   <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/responsive.css">
   <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/custom.css">
+  <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/datatables/css/dataTables.bootstrap4.min.css">
   @yield('header')
 </head>
 
@@ -226,6 +227,14 @@
   <script src="{{ base_url() }}assets/vendors/onetech/plugins/slick-1.8.0/slick.js"></script>
   <script src="{{ base_url() }}assets/vendors/onetech/plugins/easing/easing.js"></script>
   <script src="{{ base_url() }}assets/vendors/onetech/js/custom.js"></script>
+  <script src="{{ base_url() }}assets/vendors/datatables/js/datatables.min.js"></script>
+  <script src="{{ base_url() }}assets/vendors/datatables/js/dataTables.bootstrap4.min.js"></script>
+  <script>
+      $(document).ready( function () {
+          $('#myTable').DataTable();
+      } );
+  </script>
+
   @yield('script')
 </body>
 
