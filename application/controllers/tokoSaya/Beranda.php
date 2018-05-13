@@ -12,6 +12,6 @@ class Beranda extends MY_Controller {
     }
 
     public function index() {
-        echo "beranda toko saya";
+        $this->view('tokoSaya.beranda.index');
     }
 }

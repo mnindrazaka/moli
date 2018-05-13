@@ -21,9 +21,13 @@
                         @endphp
 
                         <div class="rating_r rating_r_4 product_rating mb-2">
-                            @for($i = 1; $i <= $rating / count($toko->rating); $i++)
-                                <span class="fa fa-star text-primary"></span>
-                            @endfor
+                            @if(count($toko->rating) > 0)
+                                @for($i = 1; $i <= $rating / count($toko->rating); $i++)
+                                    <span class="fa fa-star text-primary"></span>
+                                @endfor
+                            @else
+                                <div class="fa fa-star text-muted mb-3">Tidak ada rating</div>
+                            @endif
                         </div>
 
                         <div>
@@ -55,12 +59,12 @@
                             </thead>
                             <tbody>
                             @foreach($toko->rekening as $key => $row)
-                            <tr>
-                                <td>{{ $key + 1 }}</td>
-                                <td>{{ $row->bank->nama }}</td>
-                                <td>{{ $row->no }}</td>
-                                <td>{{ $row->nama }}</td>
-                            </tr>
+                                <tr>
+                                    <td>{{ $key + 1 }}</td>
+                                    <td>{{ $row->bank->nama }}</td>
+                                    <td>{{ $row->no }}</td>
+                                    <td>{{ $row->nama }}</td>
+                                </tr>
                             @endforeach
                             </tbody>
                         </table>
