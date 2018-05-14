@@ -16,7 +16,7 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title"><button type="button" class="btn btn-success"><i class="mdi mdi-plus"></i>Tambah Kategori</button></h4>
+            <h4 class="card-title"><a href="{{ base_url('/admin/kategori/create')}}" class="btn btn-success"><i class="mdi mdi-plus"></i>Tambah Kategori</a></h4>
             <table id="dataTables" class="table table-striped table-bordered">
               <thead>
                 <tr>
@@ -32,17 +32,19 @@
                     <td>{{ $key+1 }}</td>
                     <td>{{ $value->nama }}</td>
                     <td>
-                      @if( $value->gambar )
-                        <img class="mr-3" src="{{ base_url() .'uploads/'. $value->gambar }}" alt="Card image cap" style="height: 100px; width: 100px;">
-                      @else
-                        <img class="mr-3" data-src="http://via.placeholder.com/100x100" alt="Card image cap" style="height: 100px; width: 100px;">
-                      @endif
-                    </td>
-                    <td >
-                      <a href="{{ base_url('/admin/kategori/edit/') . $value->id_kategori }}" class="btn btn-sm btn-warning">Edit</a>
-                      <a href="{{ base_url('/kategori/delete/') . $value->id_kategori }}" class="btn btn-sm btn-danger">Delete</a></td>
-                    </tr>
-                  @endforeach
+                      <center>
+                        @if( $value->gambar )
+                          <img class="mr-3" src="{{ base_url() .'assets/uploads/kategori/'. $value->gambar }}" alt="Card image cap" style="height: 100px; width: 100px;">
+                        @else
+                          <img class="mr-3" src="http://via.placeholder.com/100x100" alt="Card image cap" style="height: 100px; width: 100px;">
+                        @endif
+                      </td>
+                      <td >
+                        <a href="{{ base_url('/admin/kategori/edit/') . $value->id_kategori }}" class="btn btn-sm btn-warning">Edit</a>
+                        <a href="{{ base_url('/admin/kategori/delete/') . $value->id_kategori }}" class="btn btn-sm btn-danger">Delete</a></td>
+                      </tr>
+                    @endforeach
+                  </center>
                 </tbody>
               </table>
             </div>
