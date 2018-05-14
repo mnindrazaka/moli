@@ -29,8 +29,6 @@ class Register extends MY_Controller {
 
         if(!empty($_FILES['logo']['name'])){
             $_POST['logo'] = $this->do_upload('logo', 'assets/uploads/toko', 'image', TRUE);
-            $toko = TokoModel::find($this->session->userdata('user')->id_pengguna);
-            unlink('assets/uploads/pengguna/' . $toko->logo);
         }
 
         $toko = TokoModel::create($this->input->post());

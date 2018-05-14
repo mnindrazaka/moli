@@ -31,9 +31,13 @@
                         @endphp
 
                         <div class="rating_r rating_r_4 product_rating" style="text-align =">
-                            @for($i = 1; $i <= $rating / count($ulasan); $i++)
-                                <span class="fa fa-star text-primary"></span>
-                            @endfor
+                            @if(count($ulasan) > 0)
+                                @for($i = 1; $i <= $rating / count($ulasan); $i++)
+                                    <span class="fa fa-star text-primary"></span>
+                                @endfor
+                            @else
+                                <div class="fa fa-star"></div> Belum ada rating
+                            @endif
                         </div>
 
                         <div class="product_text"><p>{{ $produk->deskripsi }}</p></div>
