@@ -138,4 +138,12 @@ class MY_Controller extends CI_Controller {
             redirect(base_url($redirect_path));
         }
     }
+
+    protected function paginate($data = [], $per_page, $base_url) {
+        $config['base_url'] = $base_url;
+        $config['total_rows'] = count($data);
+        $config['per_page'] = $per_page;
+        $this->pagination->initialize($config);
+        return $this->pagination->create_links();
+    }
 }

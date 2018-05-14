@@ -4,10 +4,9 @@
 
     <a class="btn btn-primary mb-4" href="{{ base_url('tokoSaya/produk/create') }}">Tambah</a>
 
-    <table class="table table-bordered table-striped table-hover" id="myTable">
-        <thead class="thead-inverse|thead-default">
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
         <tr>
-            <th>No</th>
             <th>Nama</th>
             <th>Kategori</th>
             <th>Harga</th>
@@ -19,7 +18,6 @@
         <tbody>
         @foreach($produk as $key => $row)
             <tr>
-                <td>{{ $key + 1 }}</td>
                 <td>{{ $row->nama }}</td>
                 <td>{{ $row->kategori->nama }}</td>
                 <td>{{ $row->harga }}</td>
@@ -36,4 +34,6 @@
         @endforeach
         </tbody>
     </table>
+
+    {!! $pagination !!}
 @endsection

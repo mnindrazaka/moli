@@ -11,8 +11,17 @@ class Produk extends MY_Controller {
         }
     }
 
-    public function index() {
-        $data['produk'] = TokoModel::find($this->session->userdata('user')->id_toko)->produk;
+    public function index($offset = 0) {
+        $data['pagination'] = $this->paginate(
+            TokoModel::find($this->session->userdata('user')->id_toko)->produk,
+            2,
+            base_url('tokoSaya/produk/index')
+        );
+
+        $data['produk'] = ProdukModel::where([
+            'id_toko' => $this->session->userdata('user')->id_toko
+        ])->offset($offset)->limit(2)->get();
+
         $this->view('tokoSaya.produk.index', $data);
     }
 
