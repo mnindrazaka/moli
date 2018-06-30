@@ -5,7 +5,7 @@
   <div class="container-fluid">
     <div class="row page-titles">
       <div class="col-md-5 col-8 align-self-center">
-        <h3 class="text-themecolor">Pengguna</h3>
+        <h3 class="text-themecolor">Bank</h3>
         {{-- <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
@@ -16,39 +16,34 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title"><a href="{{ base_url('/admin/pengguna/create')}}" class="btn btn-success"><i class="mdi mdi-plus"></i>Tambah Pengguna</a></h4>
+            <h4 class="card-title"><a href="{{ base_url('/admin/bank/create')}}" class="btn btn-success"><i class="mdi mdi-plus"></i>Tambah bank</a></h4>
             <table id="dataTables" class="table table-striped table-bordered">
               <thead>
                 <tr>
                   <th>Nomor</th>
                   <th>Nama</th>
-                  <th>Telepon</th>
-                  <th>Email</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($pengguna as $key => $value)
+                @foreach ($bank as $key => $value)
                 <tr>
                   <td>{{ $key+1 }}</td>
                   <td>{{ $value->nama }}</td>
-                  <td>{{ $value->telp }}</td>
-                  <td>{{ $value->email }}</td>
-                  <td >
-                    <a href="{{ base_url('/admin/pengguna/edit/') . $value->id_pengguna }}" class="btn btn-sm btn-warning">Edit</a>
-                    <a href="{{ base_url('/admin/pengguna/delete/') . $value->id_pengguna }}" class="btn btn-sm btn-danger">Delete</a>
+                  <td>
+                    <a href="{{ base_url('/admin/bank/edit/') . $value->id_bank }}" class="btn btn-sm btn-warning">Edit</a>
+                    <a href="{{ base_url('/admin/bank/delete/') . $value->id_bank }}" class="btn btn-sm btn-danger">Delete</a>
                   </td>
                 </tr>
                 @endforeach
-              </center>
-            </tbody>
-          </table>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<footer class="footer"> © 2017 MOLI | Admin </footer>
+  <footer class="footer"> © 2017 MOLI | Admin </footer>
 </div>
 @endsection

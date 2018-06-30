@@ -22,3 +22,4 @@ application/logs/*
 /vendor/
 
 /application/config/database.php
+/assets/uploads

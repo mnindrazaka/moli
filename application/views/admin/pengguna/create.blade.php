@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row page-titles">
         <div class="col-md-5 col-8 align-self-center">
-          <h3 class="text-themecolor">Tambah Kategori</h3>
+          <h3 class="text-themecolor">Tambah Pengguna</h3>
           {{-- <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
           <li class="breadcrumb-item active">Dashboard</li>
@@ -16,26 +16,33 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-block">
-            <form action="{{ base_url('admin/kategori/store') }}" method="post" enctype="multipart/form-data">
+            <form action="{{ base_url('admin/pengguna/store') }}" method="post" enctype="multipart/form-data">
               <div class="form-group">
-                <label for="">Nama Kategori</label>
+                <label for="">Nama Pengguna</label>
                 <input type="text" name="nama" class="form-control" value="{{ old('nama') }}" autofocus>
                 @if($errors->has('nama'))
                   <small class="text-danger">{{ $errors->first('nama') }}</small>
                 @endif
               </div>
               <div class="form-group">
-                <label for="">Deskripsi</label>
-                <textarea class="form-control" name="deskripsi" rows="3">{{ old('deskripsi') }}</textarea>
-                @if($errors->has('deskripsi'))
-                  <small class="text-danger">{{ $errors->first('deskripsi') }}</small>
+                <label for="">Telepon</label>
+                <input type="text" name="telp" class="form-control" value="{{ old('telp') }}">
+                @if($errors->has('telp'))
+                  <small class="text-danger">{{ $errors->first('telp') }}</small>
+                @endif
+              </div>
+              <div class="form-group">
+                <label for="">Email</label>
+                <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                @if($errors->has('email'))
+                  <small class="text-danger">{{ $errors->first('email') }}</small>
                 @endif
               </div>
               <div class="form-group">
                 <label for="">Foto</label>
-                <input type="file" name="gambar" class="form-control">
-                @if($errors->has('gambar'))
-                  <small class="text-danger">{{ $errors->first('gambar') }}</small>
+                <input type="file" name="foto" class="form-control">
+                @if($errors->has('foto'))
+                  <small class="text-danger">{{ $errors->first('foto') }}</small>
                 @endif
               </div>
               <div class="form-group">

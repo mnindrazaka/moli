@@ -22,7 +22,6 @@
                 <tr>
                   <th>Nomor</th>
                   <th>Nama</th>
-                  <th>gambar</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
@@ -32,26 +31,18 @@
                     <td>{{ $key+1 }}</td>
                     <td>{{ $value->nama }}</td>
                     <td>
-                      <center>
-                        @if( $value->gambar )
-                          <img class="mr-3" src="{{ base_url() .'assets/uploads/kategori/'. $value->gambar }}" alt="Card image cap" style="height: 100px; width: 100px;">
-                        @else
-                          <img class="mr-3" src="http://via.placeholder.com/100x100" alt="Card image cap" style="height: 100px; width: 100px;">
-                        @endif
-                      </td>
-                      <td >
-                        <a href="{{ base_url('/admin/kategori/edit/') . $value->id_kategori }}" class="btn btn-sm btn-warning">Edit</a>
-                        <a href="{{ base_url('/admin/kategori/delete/') . $value->id_kategori }}" class="btn btn-sm btn-danger">Delete</a></td>
-                      </tr>
-                    @endforeach
-                  </center>
-                </tbody>
-              </table>
-            </div>
+                      <a href="{{ base_url('/admin/kategori/edit/') . $value->id_kategori }}" class="btn btn-sm btn-warning">Edit</a>
+                      <a href="{{ base_url('/admin/kategori/delete/') . $value->id_kategori }}" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                  </tr>
+                @endforeach
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
     <footer class="footer"> © 2017 MOLI | Admin </footer>
   </div>

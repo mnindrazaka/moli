@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Kodinger">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url() }}assets/vendors/material-admin/images/favicon.png">
     <title>@yield('title')</title>
     <link rel="stylesheet" type="text/css" href="{{ base_url('assets/vendors/mylogin/') }}bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="{{ base_url('assets/vendors/mylogin/') }}css/my-login.css">

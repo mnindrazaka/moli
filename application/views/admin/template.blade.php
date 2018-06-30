@@ -34,45 +34,42 @@
       <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
     </svg>
   </div>
-    <div id="main-wrapper">
-      <header class="topbar">
-        <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="index.html">
-              <b><img src="{{ base_url() }}assets/vendors/material-admin/images/favicon.png" alt="homepage" class="light-logo" style="weight:40px; height:40px;" /></b>
-              <span>
-                <a href="#" class="text-white bg-dark">MOLI | Admin</a>
-              </div>
-          <div class="navbar-collapse">
-            <ul class="navbar-nav mr-auto mt-md-0">
-              <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
-              <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
-                <form class="app-search">
-                  <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
-                </form>
-              </li>
-            </ul>
+  <div id="main-wrapper">
+    <header class="topbar">
+      <nav class="navbar top-navbar navbar-toggleable-sm navbar-light">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html">
+            <b><img src="{{ base_url() }}assets/vendors/material-admin/images/favicon.png" alt="homepage" class="light-logo" style="weight:40px; height:40px;" /></b>
+            <span>
+              <a href="#" class="text-white bg-dark">MOLI | Admin</a>
+            </div>
+            <div class="navbar-collapse">
+              <ul class="navbar-nav mr-auto mt-md-0">
+                <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                <li class="nav-item hidden-sm-down search-box"> <a class="nav-link hidden-sm-down text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="ti-search"></i></a>
+                  <form class="app-search">
+                    <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a>
+                  </form>
+                </li>
+              </ul>
               <ul class="navbar-nav my-lg-0">
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ base_url() }}assets/vendors/material-admin/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn Doe</a>
                 </li>
               </ul>
             </div>
-        </nav>
-      </header>
+          </nav>
+        </header>
         <aside class="left-sidebar">
           <div class="scroll-sidebar">
             <nav class="sidebar-nav">
               <ul id="sidebarnav">
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Dashboard</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/pages-profile.html" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profile</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}table-basic.html" aria-expanded="false"><i class="mdi mdi-table"></i><span class="hide-menu">Data Table</span></a>
-                  <ul class="sidebar-nav">
-                    <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/pengguna/" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Users</span></a></li>
-                    <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/toko/" aria-expanded="false"><i class="mdi mdi-store"></i><span class="hide-menu">Toko</span></a></li>
-                    <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/kategori/" aria-expanded="false"><i class="mdi mdi-tag"></i><span class="hide-menu">Categories</span></a></li>
-                  </ul>
-                </li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Beranda</span></a></li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/pages-profile.html" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profil</span></a></li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/pengguna/" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Pengguna</span></a></li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/toko/" aria-expanded="false"><i class="mdi mdi-store"></i><span class="hide-menu">Toko</span></a></li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/kategori/" aria-expanded="false"><i class="mdi mdi-tag"></i><span class="hide-menu">Kategori</span></a></li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/bank/" aria-expanded="false"><i class="mdi mdi-bank"></i><span class="hide-menu">Bank</span></a></li>
                 {{-- <li><a class="waves-effect waves-dark" href="{{ base_url() }}map-google.html" aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu">Google Map</span></a></li>
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}pages-blank.html" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Blank Page</span></a></li> --}}
               </ul>
@@ -84,10 +81,10 @@
             <!-- item--><a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
           </div>
         </aside>
-          <!-- Content -->
-          @yield('content')
-          {{-- End Content --}}
-    </div>
+        <!-- Content -->
+        @yield('content')
+        {{-- End Content --}}
+      </div>
 
       <script src="{{ base_url() }}assets/vendors/material-admin/plugins/jquery/jquery.min.js"></script>
       <!-- Bootstrap tether Core JavaScript -->
@@ -113,7 +110,7 @@
       {{-- Data Table --}}
       <script>
       $(document).ready(function() {
-      	$('#dataTables').DataTable();
+        $('#dataTables').DataTable();
       } );
       </script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
