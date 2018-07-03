@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "bower": "^1.8.2"
+    "bower": "^1.8.2",
+    "sweetalert": "^2.1.0"
   }
 }

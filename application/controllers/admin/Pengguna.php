@@ -9,6 +9,12 @@ class Pengguna extends MY_Controller {
     $this->view('admin/pengguna/index', $data);
   }
 
+  public function get($id)
+  {
+    $data['pengguna'] = PenggunaModel::find($id);
+    $this->view('admin/pengguna/view', $data);
+  }
+
   public function create() {
     $this->view('admin/pengguna/create');
   }
