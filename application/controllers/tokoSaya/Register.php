@@ -27,7 +27,7 @@ class Register extends MY_Controller {
             'kota' => 'required|string',
         ]);
 
-        if(!empty($_FILES['logo']['name'])){
+        if(!empty($_FILES['logo'])){
             $_POST['logo'] = $this->do_upload('logo', 'assets/uploads/toko', 'image', TRUE);
         }
 
