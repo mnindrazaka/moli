@@ -71,7 +71,7 @@
                         <div class="cart_count"><span>10</span></div>
                       </div>
                       <div class="cart_content">
-                        <div class="cart_text"><a href="#">Keranjang</a></div>
+                        <div class="cart_text"><a href="{{ base_url('keranjang') }}">Keranjang</a></div>
                         <div class="cart_price">Rp. 100.000</div>
                       </div>
                     </div>
