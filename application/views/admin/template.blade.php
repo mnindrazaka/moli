@@ -56,7 +56,7 @@
               </ul>
               <ul class="navbar-nav my-lg-0">
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ base_url() }}assets/vendors/material-admin/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />Markarn Doe</a>
+                  <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ base_url() }}assets/vendors/material-admin/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />{{ $_SESSION['admin']->username }}</a>
                 </li>
               </ul>
             </div>
@@ -66,14 +66,14 @@
           <div class="scroll-sidebar">
             <nav class="sidebar-nav">
               <ul id="sidebarnav">
+
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Beranda</span></a></li>
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/pages-profile.html" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profil</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/pengguna/" aria-expanded="false"><i class="mdi mdi-account-multiple"></i><span class="hide-menu">Pengguna</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/toko/" aria-expanded="false"><i class="mdi mdi-store"></i><span class="hide-menu">Toko</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/kategori/" aria-expanded="false"><i class="mdi mdi-tag"></i><span class="hide-menu">Kategori</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/bank/" aria-expanded="false"><i class="mdi mdi-bank"></i><span class="hide-menu">Bank</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/admin/" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Admin</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/level/" aria-expanded="false"><i class="mdi mdi-signal"></i><span class="hide-menu">Level Admin</span></a></li>
+               
+                @foreach($_SESSION['admin']->level->akses as $row)
+                  <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/{{ $row->modul->nama }}/" aria-expanded="false"><i class="mdi mdi-{{$row->modul->icon}}"></i><span class="hide-menu">{{ $row->modul->label }}</span></a></li>          
+                @endforeach
+
                 {{-- <li><a class="waves-effect waves-dark" href="{{ base_url() }}map-google.html" aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu">Google Map</span></a></li>
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}pages-blank.html" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Blank Page</span></a></li> --}}
               </ul>

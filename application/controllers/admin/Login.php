@@ -34,6 +34,6 @@ class Login extends MY_Controller {
 
     public function logout_process() {
         unset($_SESSION['admin']);
-        redirect(base_url());
+        redirect(base_url('admin/login'));
     }
 }
