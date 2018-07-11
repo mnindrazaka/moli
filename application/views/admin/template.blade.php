@@ -72,6 +72,8 @@
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/toko/" aria-expanded="false"><i class="mdi mdi-store"></i><span class="hide-menu">Toko</span></a></li>
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/kategori/" aria-expanded="false"><i class="mdi mdi-tag"></i><span class="hide-menu">Kategori</span></a></li>
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/bank/" aria-expanded="false"><i class="mdi mdi-bank"></i><span class="hide-menu">Bank</span></a></li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/admin/" aria-expanded="false"><i class="mdi mdi-account"></i><span class="hide-menu">Admin</span></a></li>
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/level/" aria-expanded="false"><i class="mdi mdi-signal"></i><span class="hide-menu">Level Admin</span></a></li>
                 {{-- <li><a class="waves-effect waves-dark" href="{{ base_url() }}map-google.html" aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu">Google Map</span></a></li>
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}pages-blank.html" aria-expanded="false"><i class="mdi mdi-book-open-variant"></i><span class="hide-menu">Blank Page</span></a></li> --}}
               </ul>
@@ -80,7 +82,7 @@
           <div class="sidebar-footer">
             <!-- item--><a href="{{ base_url() }}" class="link" data-toggle="tooltip" title="Settings"><i class="ti-settings"></i></a>
             <!-- item--><a href="{{ base_url() }}" class="link" data-toggle="tooltip" title="Email"><i class="mdi mdi-gmail"></i></a>
-            <!-- item--><a href="" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
+            <!-- item--><a href="{{ base_url('admin/login/logout_process') }}" class="link" data-toggle="tooltip" title="Logout"><i class="mdi mdi-power"></i></a>
           </div>
         </aside>
         <!-- Content -->
