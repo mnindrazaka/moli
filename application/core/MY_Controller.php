@@ -146,4 +146,21 @@ class MY_Controller extends CI_Controller {
         $this->pagination->initialize($config);
         return $this->pagination->create_links();
     }
+
+    protected function authenticate() {
+        if(is_null($this->session->userdata('admin'))) {
+            redirect(base_url('admin/login'));
+        } else if (get_class($this) != 'Beranda' && get_class($this) != 'Login') {
+            $found = false;
+            foreach ($this->session->userdata('admin')->level->akses as $row) {
+                if ($row->modul->nama == get_class($this)) {
+                    $found = true;
+                }
+            }
+
+            if (!$found) {
+                redirect(base_url('admin/beranda'));
+            }
+        }
+    }
 }
