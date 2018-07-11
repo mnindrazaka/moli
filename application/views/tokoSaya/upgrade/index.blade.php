@@ -12,14 +12,25 @@
           <p class="card-text">{{ $value->keterangan }}</p>
           @php
           $color = "";
+          $url = "";
+
           if ($value->id_jenis_toko == 1)
+          {
             $color = "danger";
+            $url = "viewBronze";
+          }
           else if ($value->id_jenis_toko == 2)
+          {
             $color = "primary";
+            $url = "viewSilver";
+          }
           else if ($value->id_jenis_toko == 3)
+          {
             $color = "warning";
+            $url = "viewGold";
+          }
           @endphp
-          <a href="{{ base_url('tokoSaya/upgrade/viewBronze') }}" class="btn btn-outline-{{ $color }}">Lihat detail</a>
+          <a href="{{ base_url('tokoSaya/toko/' . $url ) }}" class="btn btn-outline-{{ $color }}">Lihat detail</a>
 
         </div>
       </div>

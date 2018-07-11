@@ -23,11 +23,13 @@ class Toko extends MY_Controller {
     }
 
     public function viewGold() {
-        $this->view('tokoSaya.upgrade.gold');
+        $data['id_toko'] = $this->session->userdata('user')->id_toko;
+        $this->view('tokoSaya.upgrade.gold', $data);
     }
 
     public function viewBronze() {
-        $this->view('tokoSaya.upgrade.bronze');
+        $data['id_toko'] = $this->session->userdata('user')->id_toko;
+        $this->view('tokoSaya.upgrade.bronze', $data);
     }
 
     public function update($id) {

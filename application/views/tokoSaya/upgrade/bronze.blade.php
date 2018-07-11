@@ -11,7 +11,7 @@
     Menjadi online marketplace penjual ikan terbaik di Indonesia.
   </p>
   <form action="{{ base_url('tokoSaya/Toko/update/' . $id_toko) }}" method="post">
-    <input type="hidden" name="id_jenis_toko" value="3">
+    <input type="hidden" name="id_jenis_toko" value="1">
   <button type="submit" class="btn btn-outline-danger">Upgrade</button>
 </form>
 </div>
