@@ -11,6 +11,7 @@
                     <a href="{{ base_url('tokoSaya/profil') }}" class="list-group-item list-group-item-action">Profil Toko</a>
                     <a href="{{ base_url('tokoSaya/produk') }}" class="list-group-item list-group-item-action">Produk Toko</a>
                     <a href="{{ base_url('tokoSaya/rekening') }}" class="list-group-item list-group-item-action">Rekening</a>
+                    <a href="{{ base_url('tokoSaya/toko') }}" class="list-group-item list-group-item-action">Upgrade</a>
                 </div>
             </div>
 

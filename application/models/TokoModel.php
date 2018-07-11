@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 class TokoModel extends Eloquent {
     protected $table = 'toko';
     protected $primaryKey = 'id_toko';
-    protected $fillable = ['nama', 'slogan', 'deskripsi', 'logo', 'telp', 'latitude', 'longitude', 'kota'];
+    protected $fillable = ['nama', 'slogan', 'deskripsi', 'logo', 'telp', 'latitude', 'longitude', 'kota', 'id_jenis_toko'];
     public $timestamps = false;
 
     public function rating() {

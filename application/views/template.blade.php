@@ -5,6 +5,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ base_url() }}assets/vendors/material-admin/images/favicon.png">
   <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/styles/bootstrap4/bootstrap.min.css">
   <link href="{{ base_url() }}assets/vendors/onetech/plugins/fontawesome-free-5.0.1/css/fontawesome-all.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" type="text/css" href="{{ base_url() }}assets/vendors/onetech/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
@@ -71,7 +72,7 @@
                         <div class="cart_count"><span>10</span></div>
                       </div>
                       <div class="cart_content">
-                        <div class="cart_text"><a href="#">Keranjang</a></div>
+                        <div class="cart_text"><a href="{{ base_url('keranjang') }}">Keranjang</a></div>
                         <div class="cart_price">Rp. 100.000</div>
                       </div>
                     </div>

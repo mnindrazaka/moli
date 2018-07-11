@@ -42,7 +42,7 @@
 
                     <div class="form-group">
                         <label for="">Logo Toko</label>
-                        <input type="file" name="logo" class="form-control" value="{{ old('logo') }}">
+                        <input type="file" name="logo" class="form-control">
                         @if($errors->has('logo'))
                             <small class="text-danger">{{ $errors->first('logo') }}</small>
                         @endif
