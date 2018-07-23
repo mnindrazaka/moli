@@ -14,6 +14,12 @@ class Toko extends MY_Controller {
     $this->view('admin/toko/index', $data);
   }
 
+  public function get($id)
+  {
+    $data['toko'] = TokoModel::find($id);
+    $this->view('admin/toko/view', $data);
+  }
+
   public function create() {
     $this->view('admin/toko/create');
   }
