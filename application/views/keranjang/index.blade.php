@@ -24,14 +24,14 @@
               <tr>
                 <td scope="row">{{ $key + 1 }}</td>
                 <td><a href="{{ base_url('produk/show/' . $row->produk->id_produk) }}">{{ $row->produk->nama }}</a></td>
-                <td>{{ $row->produk->harga }}</td>
+                <td>{{ number_format($row->produk->harga) }}</td>
                 <td>
                   <form id="form{{ $row->id_keranjang }}" method="post" action="{{ base_url('keranjang/update/' . $row->id_keranjang) }}">
                     <input type="hidden" name="id_produk" value="{{ $row->produk->id_produk }}"/>
                     <input type="text" class="form-control" name="jumlah" value="{{ $row->jumlah }}" />
                   </form>
                 </td>
-                <td>{{ $row->subtotal }}</td>
+                <td>{{ number_format($row->subtotal) }}</td>
                 <td>
                   <div class="btn-group" role="group" aria-label="">
                     <button type="submit" class="btn btn-warning" form="form{{ $row->id_keranjang }}">Ubah</button>
@@ -44,7 +44,7 @@
             </tbody>
           </table>
 
-          <h3>Total : {{ $total }}</h3>
+          <h3>Total : {{ number_format($total) }}</h3>
         </div>
       </div>
     </div>
