@@ -11,4 +11,8 @@ class TransaksiModel extends Eloquent {
     public function detailTransaksi() {
         return $this->hasMany('DetailTransaksiModel', 'id_transaksi', 'id_transaksi');
     }
+
+    public function Pengguna() {
+        return $this->belongsTo('PenggunaModel', 'id_pengguna', 'id_pengguna');
+    }
 }
