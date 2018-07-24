@@ -28,6 +28,11 @@
                   <td>{{ $value->status ? 'Sudah Dikonfirmasi' : 'Belum Dikonfirmasi' }}</td>
                   <td>
                     <a href="{{ base_url('transaksi/show/' . $value->id_transaksi) }}" class="btn btn-sm btn-primary">Detail</a>
+                    @if (!$value->bukti)
+                      <a class="btn btn-sm btn-warning" href="{{ base_url('transaksi/edit/' . $value->id_transaksi) }}" role="button">Upload Bukti</a>
+                    @else
+                      <a class="btn btn-sm btn-warning" href="{{ base_url('assets/uploads/bukti/' . $value->bukti) }}" role="button">Lihat Bukti</a>
+                    @endif
                   </td>
                 </tr>
                 @endforeach

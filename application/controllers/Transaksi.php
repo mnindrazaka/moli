@@ -51,4 +51,23 @@ class Transaksi extends MY_Controller {
 
       redirect('transaksi');
     }
+
+    public function edit($id)
+    {
+      $data['transaksi'] = TransaksiModel::find($id);
+      $this->view('transaksi.edit', $data); 
+    }
+
+    public function update($id)
+    {
+      $post = $this->input->post();
+      if(!empty($_FILES['bukti']['name'])) {
+        $post['bukti'] = $this->do_upload('bukti', 'assets/uploads/bukti', 'image', TRUE);
+        $transaksi = TransaksiModel::find($id);
+        unlink('assets/uploads/bukti/' . $transaksi->bukti);
+      }
+
+      TransaksiModel::find($id)->update($post);
+      redirect(base_url('transaksi'));
+    }
 }
