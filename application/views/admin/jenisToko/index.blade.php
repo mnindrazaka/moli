@@ -16,28 +16,33 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-block">
-            <a href="{{ base_url('/admin/toko/create')}}" class="btn btn-outline-success"><i class="mdi mdi-plus"></i>Tambah Toko</a>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-block">
             <table id="dataTables" class="table table-striped table-bordered">
               <thead>
                 <tr>
                   <th>Nomor</th>
                   <th>Nama</th>
+                  <th>Batas Produk</th>
                   <th>Aksi</th>
                 </tr>
               </thead>
               <tbody>
-                @foreach ($toko as $key => $value)
+                @foreach ($jenis_toko as $key => $value)
                 <tr>
                   <td>{{ $key+1 }}</td>
                   <td>{{ $value->nama }}</td>
                   <td>
-                    <a href="#" onclick="openModal(<?php echo $value->id_jenis_toko; ?>)" class="btn btn-sm btn-primary">Info</a>
-                    <a href="{{ base_url('/admin/jenisToko/edit/') . $value->id_jenis_toko }}" class="btn btn-sm btn-warning">Edit</a>
-                    <a href="{{ base_url('/admin/jenisToko/delete/') . $value->id_jenis_toko }}" class="btn btn-sm btn-danger">Delete</a>
+                    @if ($value->batas_produk)
+                      <form id="form{{ $value->id_jenis_toko }}" action="{{ base_url('admin/jenisToko/update/' . $value->id_jenis_toko) }}" method="post">
+                        <input type="text" name="batas_produk" value="{{ $value->batas_produk }}" class="form-control" />
+                      </form>
+                    @else
+                      Tidak Terbatas
+                    @endif
+                  </td>
+                  <td>
+                    @if ($value->batas_produk)
+                      <button type="submit" form="form{{ $value->id_jenis_toko }}" class="btn btn-sm btn-warning">Edit</button>
+                    @endif
                   </td>
                 </tr>
                 @endforeach
@@ -82,12 +87,7 @@ function openModal(id) {
   });
 }
 $(document).ready(function() {
-  $('#dataTables').DataTable( {
-    dom: 'Bfrtip',
-    buttons: [
-      'copy', 'csv', 'excel', 'pdf', 'print'
-    ]
-  } );
-} );
+  $('#dataTables').DataTable();
+});
 </script>
 @endsection
