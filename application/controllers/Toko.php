@@ -10,6 +10,7 @@ class Toko extends MY_Controller {
 
     public function show($id) {
         $data['toko'] = TokoModel::find($id);
+        $data['produk'] = ProdukModel::where('id_toko', $id);
         $this->view('toko.show', $data);
     }
 }
