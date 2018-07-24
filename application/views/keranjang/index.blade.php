@@ -47,6 +47,9 @@
           <h3>Total : {{ number_format($total) }}</h3>
         </div>
       </div>
+      
+      <a class="btn btn-lg btn-success mt-3" href="{{ base_url('transaksi/selectLocation') }}" role="button">Selesai</a>
+
     </div>
   </div>
 
