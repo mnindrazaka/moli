@@ -16,7 +16,11 @@
       <div class="col-lg-12">
         <div class="card">
           <div class="card-block">
-            <h4 class="card-title"><a href="{{ base_url('/admin/admin/create')}}" class="btn btn-success"><i class="mdi mdi-plus"></i>Tambah admin</a></h4>
+            <a href="{{ base_url('/admin/admin/create')}}" class="btn btn-outline-success"><i class="mdi mdi-plus"></i>Tambah admin</a>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-block">
             <table id="dataTables" class="table table-striped table-bordered">
               <thead>
                 <tr>

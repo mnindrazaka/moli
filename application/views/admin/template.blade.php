@@ -55,8 +55,10 @@
                 </li>
               </ul>
               <ul class="navbar-nav my-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ base_url() }}assets/vendors/material-admin/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />{{ $_SESSION['admin']->username }}</a>
+                <li class="nav-item">
+                  <a class="nav-link text-muted waves-effect waves-dark" href="{{ base_url() }}admin/profil/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <img src="{{ base_url() }}assets/vendors/material-admin/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />{{ $_SESSION['admin']->username }}
+                  </a>
                 </li>
               </ul>
             </div>
@@ -68,10 +70,10 @@
               <ul id="sidebarnav">
 
                 <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Beranda</span></a></li>
-                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/beranda/pages-profile.html" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profil</span></a></li>
-               
+                <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/profil/" aria-expanded="false"><i class="mdi mdi-account-check"></i><span class="hide-menu">Profil</span></a></li>
+
                 @foreach($_SESSION['admin']->level->akses as $row)
-                  <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/{{ $row->modul->nama }}/" aria-expanded="false"><i class="mdi mdi-{{$row->modul->icon}}"></i><span class="hide-menu">{{ $row->modul->label }}</span></a></li>          
+                  <li><a class="waves-effect waves-dark" href="{{ base_url() }}admin/{{ $row->modul->nama }}/" aria-expanded="false"><i class="mdi mdi-{{$row->modul->icon}}"></i><span class="hide-menu">{{ $row->modul->label }}</span></a></li>
                 @endforeach
 
                 {{-- <li><a class="waves-effect waves-dark" href="{{ base_url() }}map-google.html" aria-expanded="false"><i class="mdi mdi-earth"></i><span class="hide-menu">Google Map</span></a></li>

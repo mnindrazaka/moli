@@ -14,6 +14,12 @@ class Bank extends MY_Controller {
     $this->view('admin/bank/index', $data);
   }
 
+  public function get($id)
+  {
+    $data['bank'] = BankModel::find($id);
+    $this->view('admin/bank/view', $data);
+  }
+
   public function create() {
     $this->view('admin/bank/create');
   }
