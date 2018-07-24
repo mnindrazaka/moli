@@ -30,6 +30,10 @@
                             @endif
                         </div>
 
+                        <div class="mb-3">
+                            <span>Level {{ $toko->jenisToko->nama }}</span>
+                        </div>
+
                         <div>
                             <i class="fa fa-phone"></i>
                             <span>{{ $toko->telp }}</span>

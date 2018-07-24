@@ -7,6 +7,8 @@
   <div class="container mt-4">
     <div class="card">
       <div class="card-body">
+
+      @if(count($keranjang) > 0)
         <table class="table table-hover table-stripped table-responsive">
           <thead>
             <tr>
@@ -43,10 +45,16 @@
         </table>
 
         <h3>Total : {{ number_format($total) }}</h3>
+      @else
+        <h3>Keranjang Masih Kosong</h3>
+        <p class="text-muted">Silahkan belanja dulu di website kami</p>
+      @endif
       </div>
     </div>
 
-    <a class="btn btn-success mt-3" href="{{ base_url('transaksi/selectLocation') }}" role="button">Selesai</a>
+    @if (count($keranjang) > 0)
+      <a class="btn btn-success mt-3" href="{{ base_url('transaksi/selectLocation') }}" role="button">Selesai</a>
+    @endif
 
   </div>
 </div>

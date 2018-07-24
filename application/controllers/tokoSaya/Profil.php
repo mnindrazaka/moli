@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Beranda extends MY_Controller {
+class Profil extends MY_Controller {
 
     public function __construct() {
         parent::__construct();
@@ -12,6 +12,7 @@ class Beranda extends MY_Controller {
     }
 
     public function index() {
-        $this->view('tokoSaya.profil.index');
+        $data['toko'] = TokoModel::find($this->session->userdata('user')->id_toko);
+        $this->view('tokoSaya.profil.index', $data);
     }
 }
