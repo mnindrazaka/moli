@@ -2,7 +2,17 @@
 
 @section('content-tokoSaya')
 
-    <a class="btn btn-primary mb-4" href="{{ base_url('tokoSaya/produk/create') }}">Tambah</a>
+    @if($jumlah_produk < $batas_produk || !$batas_produk)
+        <a class="btn btn-primary mb-4" href="{{ base_url('tokoSaya/produk/create') }}">Tambah</a>
+    @endif
+
+    @if($batas_produk)
+        @php $persentase = ($jumlah_produk / $batas_produk) * 100  @endphp
+        <h6>Tersisa {{ $batas_produk - $jumlah_produk }} Produk Lagi</h6>
+        <div class="progress mb-3">
+            <div class="progress-bar" role="progressbar" style="width: {{ $persentase }}%" aria-valuenow="{{ $persentase }}" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    @endif
 
     <table class="table table-bordered table-striped table-hover">
         <thead>

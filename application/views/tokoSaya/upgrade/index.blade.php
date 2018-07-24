@@ -1,6 +1,7 @@
 @extends('template-tokoSaya')
 
 @section('content-tokoSaya')
+
 <div class="row">
   @foreach ($jenis_toko as $key => $value)
     @if ($key!=0 && $value->id_jenis_toko > $toko->id_jenis_toko)

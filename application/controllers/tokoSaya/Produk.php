@@ -18,6 +18,8 @@ class Produk extends MY_Controller {
             base_url('tokoSaya/produk/index')
         );
 
+        $data['jumlah_produk'] = count(ProdukModel::all());
+        $data['batas_produk'] = TokoModel::find($this->session->userdata('user')->id_toko)->jenisToko->batas_produk;
         $data['produk'] = ProdukModel::where([
             'id_toko' => $this->session->userdata('user')->id_toko
         ])->offset($offset)->limit(2)->get();

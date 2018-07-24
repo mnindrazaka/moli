@@ -19,4 +19,8 @@ class TokoModel extends Eloquent {
     public function produk() {
         return $this->hasMany('ProdukModel', 'id_toko', 'id_toko');
     }
+
+    public function jenisToko() {
+        return $this->belongsTo('JenisTokoModel', 'id_jenis_toko', 'id_jenis_toko');
+    }
 }

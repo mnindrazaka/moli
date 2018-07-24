@@ -55,10 +55,14 @@
                 </li>
               </ul>
               <ul class="navbar-nav my-lg-0">
-                <li class="nav-item">
+                <li class="nav-item dropdown">
                   <a class="nav-link text-muted waves-effect waves-dark" href="{{ base_url() }}admin/profil/" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <img src="{{ base_url() }}assets/vendors/material-admin/images/users/1.jpg" alt="user" class="profile-pic m-r-10" />{{ $_SESSION['admin']->username }}
                   </a>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="{{ base_url('admin/profil') }}">Profil</a>
+                    <a class="dropdown-item" href="{{ base_url('admin/login/logout_process') }}">Logout</a>
+                  </div>
                 </li>
               </ul>
             </div>
