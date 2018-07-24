@@ -38,6 +38,11 @@
                 @endforeach
               </tbody>
             </table>
+
+            <h5 class="mt-5">Lokasi Pengiriman</h5>
+            <div class="border">
+              <div id="googleMap" style="width:100%;height:300px;"></div>            
+            </div>
           </div>
         </div>
       </div>
@@ -46,4 +51,26 @@
 
   <footer class="footer"> © 2017 MOLI | Admin </footer>
 </div>
+@endsection
+
+@section('script')
+    <script>
+        function myMap() {
+            var myCenter = new google.maps.LatLng({{ $transaksi->latitude }}, {{ $transaksi->longitude }});
+
+            var mapProp = {
+                center: myCenter,
+                zoom: 15
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+            var marker = new google.maps.Marker({
+                position: myCenter,
+                animation:google.maps.Animation.BOUNCE
+            });
+            marker.setMap(map);
+        }
+    </script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB-0iUmT6UROU_Hx4RJtY32o2vSxS6PQS4&callback=myMap"></script>
 @endsection
