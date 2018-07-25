@@ -79,7 +79,43 @@
                     <div class="col">
                         <hr>
                         <h4 class="mt-4">Ulasan Pelanggan</h4>
-                        <p class="text-muted">Silahkan login untuk memberikan ulasan</p>
+                       
+                        @if(!isset($_SESSION['user']))
+                                <p class="text-muted">Silahkan login untuk memberikan ulasan</p>
+                        @elseif($_SESSION['user']->id_toko == $toko->id_toko)
+                                    Anda tidak bisa memberikan ulasan terhadap toko anda sendiri    
+                        @else
+                                    <form method="post" action="{{ base_url('rating/store') }}">
+                                        
+                                        <input type="hidden" name="id_toko" value="{{ $toko->id_toko }}" />
+                                        <input type="hidden" name="id_pengguna" value="{{ $_SESSION['user']->id_pengguna }}" />
+                                        
+                                        <div class="form-group">
+                                            <label for="rating">Jumlah Bintang</label>
+                                            <select class="form-control" name="rating">
+                                                <option selected value="">Pilih Jumlah Bintang</option>
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    <option value="{{ $i }}" {{ old('rating') == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                                @endfor
+                                            </select>
+                                            @if($errors->has('rating'))
+                                                <small class="text-danger">{{ $errors->first('rating') }}</small>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="keterangan">Keterangan</label>
+                                            <textarea id="keterangan" type="text" class="form-control" name="keterangan" placeholder="Keterangan anda...">{{ old('keterangan') }}</textarea>
+                                            @if($errors->has('keterangan'))
+                                                <small class="text-danger">{{ $errors->first('keterangan') }}</small>
+                                            @endif
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </form>
+                                @endif
+
                         <div class="reviews_slider_container">
                             <!-- Reviews Slider -->
                             <div class="owl-carousel owl-theme reviews_slider">
@@ -96,7 +132,7 @@
                                                             <span class="fa fa-star text-primary"></span>
                                                         @endfor
                                                     </div>
-                                                    <div class="review_time">2 day ago</div>
+                                                    <div class="review_time">{{ date_format(date_create($row->tanggal), "d/m/Y") }}</div>
                                                 </div>
                                                 <div class="review_text"><p>{{ $row->keterangan }}</p></div>
                                             </div>

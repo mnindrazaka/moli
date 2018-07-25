@@ -156,7 +156,7 @@
                                                             <span class="fa fa-star text-primary"></span>
                                                         @endfor
                                                     </div>
-                                                    <div class="review_time">2 day ago</div>
+                                                    <div class="review_time">{{ date_format(date_create($row->tanggal), "d/m/Y") }}</div>
                                                 </div>
                                                 <div class="review_text">
                                                     <p>{{ $row->keterangan }}</p>
