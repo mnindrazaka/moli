@@ -28,7 +28,7 @@ class Level extends MY_Controller {
         // insert akses
         foreach ($this->input->post('id_modul') as $row) {
             AksesModel::create([
-                'id_level' => $level->id,
+                'id_level' => $level->id_level,
                 'id_modul' => $row
             ]);
         }
