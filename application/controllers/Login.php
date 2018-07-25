@@ -17,7 +17,7 @@ class Login extends MY_Controller {
             'password' => 'required|string|min:6'
         ]);
         $user = $this->getUser();
-        $this->authenticate($user);
+        $this->authenticateUser($user);
     }
 
     // Get user to authenticate
@@ -29,7 +29,7 @@ class Login extends MY_Controller {
     }
 
     // Authenticate user
-    public function authenticate($user) {
+    public function authenticateUser($user) {
         if (!is_null($user)) {
             $this->session->set_userdata('user', $user);
             redirect(base_url());
