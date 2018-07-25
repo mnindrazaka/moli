@@ -48,7 +48,6 @@
                     <div class="col">
                         <hr>
                         <h4 class="mt-4">Ulasan Pelanggan</h4>
-                        <p class="text-muted">Silahkan login untuk memberikan ulasan</p>
                         <div class="reviews_slider_container">
                             <!-- Reviews Slider -->
                             <div class="owl-carousel owl-theme reviews_slider">

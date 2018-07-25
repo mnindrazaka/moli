@@ -252,7 +252,7 @@
                   <div class="review_name">{{ $row->pengguna->nama }}</div>
                   <div class="review_rating_container">
                     <div class="rating_r rating_r_4 review_rating"><i></i><i></i><i></i><i></i><i></i></div>
-                    <div class="review_time">2 day ago</div>
+                    <div class="review_time">{{ date_format(date_create($row->tanggal), "d/m/Y") }}</div>
                   </div>
                   <div class="review_text"><p>{{ $row->keterangan }}</p></div>
                 </div>

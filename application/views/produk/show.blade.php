@@ -101,6 +101,42 @@
 
                             <div class="reviews_title_container">
                                 <h3 class="reviews_title">Ulasan Pelanggan</h3>
+
+                                @if(!isset($_SESSION['user']))
+                                    <p class="text-muted">Silahkan login untuk memberikan ulasan</p>
+                                @elseif($_SESSION['user']->id_toko == $produk->id_toko)
+                                    Anda tidak bisa memberikan ulasan terhadap produk anda sendiri    
+                                @else
+                                    <form method="post" action="{{ base_url('ulasan/store') }}">
+                                        
+                                        <input type="hidden" name="id_produk" value="{{ $produk->id_produk }}" />
+                                        <input type="hidden" name="id_pengguna" value="{{ $_SESSION['user']->id_pengguna }}" />
+                                        
+                                        <div class="form-group">
+                                            <label for="rating">Jumlah Bintang</label>
+                                            <select class="form-control" name="rating">
+                                                <option selected value="">Pilih Jumlah Bintang</option>
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    <option value="{{ $i }}" {{ old('rating') == $i ? 'selected' : '' }}>{{ $i }}</option>
+                                                @endfor
+                                            </select>
+                                            @if($errors->has('rating'))
+                                                <small class="text-danger">{{ $errors->first('rating') }}</small>
+                                            @endif
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="keterangan">Keterangan</label>
+                                            <textarea id="keterangan" type="text" class="form-control" name="keterangan" placeholder="Keterangan anda...">{{ old('keterangan') }}</textarea>
+                                            @if($errors->has('keterangan'))
+                                                <small class="text-danger">{{ $errors->first('keterangan') }}</small>
+                                            @endif
+                                        </div>
+
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-primary">Simpan</button>
+                                        </div>
+                                    </form>
+                                @endif 
                             </div>
 
                             <div class="reviews_slider_container">
