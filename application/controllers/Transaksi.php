@@ -64,7 +64,9 @@ class Transaksi extends MY_Controller {
       if(!empty($_FILES['bukti']['name'])) {
         $post['bukti'] = $this->do_upload('bukti', 'assets/uploads/bukti', 'image', TRUE);
         $transaksi = TransaksiModel::find($id);
-        unlink('assets/uploads/bukti/' . $transaksi->bukti);
+        if($transaksi->bukti) {
+          unlink('assets/uploads/bukti/' . $transaksi->bukti);
+        }
       }
 
       TransaksiModel::find($id)->update($post);
