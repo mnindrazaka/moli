@@ -1,4 +1,5 @@
-## :rocket: Codeigniter extended
+# Moli
+Marketplace for fish
 
 ### Prerequriments
   - PHP > 5.6
